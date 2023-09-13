@@ -30,8 +30,7 @@ const Footer = () => {
       </li>
       <li>
         <a href="https://www.twitter.com" target="_blank" className="footer-icon" rel="noreferrer"
-          ><i className="fab fa-squarespace"></i
-        ></a>
+          ><i className="fab fa-squarespace"></i></a>
       </li>
     </ul>
     <p className="copyright">
