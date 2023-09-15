@@ -12,7 +12,7 @@ function App() {
         <About></About>
         <Services></Services>
         <Tours></Tours>
-        <Footer></Footer>
+        <Footer></Footer> 
   </>
     )
 }

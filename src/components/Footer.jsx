@@ -1,16 +1,16 @@
 import React from 'react'
-import { footerLinks, socialLinks } from '../data'
-import PageLinks from './PagesLinks';
-import SocialLinks from './SocialLinks'
+import { socialLinks } from '../data'
 const Footer = () => {
   return (
-    <footer className="section footer">
-      <PageLinks data={footerLinks} parentClass='footer-links' itemClass='footer-link'></PageLinks>
-      <SocialLinks data={socialLinks} parentClass='footer-icons' itemClass='footer-icon'> </SocialLinks>
+    <footer className="footer">
+      <div class="content has-text-centered">
+      {/* <SocialLinks data={socialLinks} parentClass='footer-icons' itemClass='footer-icon'> </SocialLinks> */}
     <p className="copyright">
-      copyright &copy; Backroads travel tours company
-      <span id="date">{new Date().getFullYear()}</span> all rights reserved
+      copyright &copy; Grupo travel tours company
+      <span className='ml-3' id="date">{new Date().getFullYear()}</span> all rights reserved
     </p>
+      </div>
+     
   </footer>
   )
 }
