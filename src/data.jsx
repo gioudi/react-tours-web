@@ -2,6 +2,8 @@ import tour1 from './images/tour-1.jpeg'
 import tour2 from './images/tour-2.jpeg'
 import tour3 from './images/tour-3.jpeg'
 import tour4 from './images/tour-4.jpeg'
+import { faFacebook, faTwitter, faInstagram, faInnosoft } from '@fortawesome/free-brands-svg-icons'
+
 export const pageLinks = [
     {
         id: 1,
@@ -28,17 +30,17 @@ export const socialLinks= [
     {
         id: 1,
         href: 'https://www.twitter.com',
-        icon: 'fab fa-facebook'
+        icon: faFacebook
     },
     {
         id: 2,
         href: 'https://www.twitter.com',
-        icon: 'fab fa-twitter'
+        icon: faTwitter
     },
     {
         id: 3.,
         href: 'https://www.twitter.com',
-        icon: 'fab fa-squarespace'
+        icon: faInstagram
     },
 ]
 
