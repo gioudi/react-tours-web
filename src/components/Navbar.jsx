@@ -1,24 +1,47 @@
+/* eslint-disable jsx-a11y/alt-text */
 import React from 'react';
-import logo from '../images/logo.svg';
-import {pageLinks, socialLinks} from '../data';
+import logo from '../images/logo.png';
+import {pageLinks } from '../data';
 import PageLinks from './PagesLinks';
-import SocialLinks from './SocialLinks';
 
 const Navbar = () => {
   return (
+    <nav className="navbar" role="navigation" aria-label="main navigation">
+  <div className="navbar-brand">
+    <a className="navbar-item" href="https://bulma.io">
+      <img src={logo}  height="100"/>
+    </a>
 
-    <nav className="navbar">
-    <div className="nav-center">
-      <div className="nav-header">
-        <img src={logo} className="nav-logo" alt="backroads" />
-        <button type="button" className="nav-toggle" id="nav-toggle">
-          <i className="fas fa-bars"></i>
-        </button>
+    <a role="button" href={() => false} className="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+
+  <div id="navbarBasicExample" className="navbar-menu">
+    <div className="navbar-end ">
+      <PageLinks data={pageLinks} itemClass='navbar-item'/>
+      <div class="navbar-dropdown">
+      <PageLinks data={pageLinks} itemClass='navbar-item'/>
       </div>
-      <PageLinks data={pageLinks} parentClass='nav-links' itemClass='nav-link'/>
-      <SocialLinks data={socialLinks} parentClass='nav-icons' itemClass='nav-icon'> </SocialLinks>
     </div>
-   </nav>
+
+    {/* <div className="navbar-end">
+      <div className="navbar-item">
+        <div className="buttons">
+          <a href={() => false}  className="button is-primary">
+            <strong>Sign up</strong>
+          </a>
+          <a href={() => false} className="button is-light">
+            Log in
+          </a>
+        </div>
+      </div>
+    </div> */}
+  </div>
+</nav>
+
 
   )
 }

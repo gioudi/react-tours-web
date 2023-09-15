@@ -1,18 +1,18 @@
 const Tour = ({payload})=> {
     let {image,date,title,info, icon,location,duration,price} = payload;
-    console.log(payload)
     
     return (
-        <article className="tour-card">
-        <div className="tour-img-container">
-          <img src={image} className="tour-img" alt="" />
-          <p className="tour-date">{date}</p>
+      <div class="column">
+      <article className="card">
+        <div className="card-image">
+          <figure class="image is-4by3">
+          <img src={image} className="" alt={image} />
+          </figure>
+          <h6 className="subtitle is-6 px-4">{date}</h6>
         </div>
-        <div className="tour-info">
-          <div className="tour-title">
-            <h4>{title}</h4>
-          </div>
-          <p>
+        <div className="card-content"> 
+          <h4 className="title is-4">{title}</h4>
+          <p className="content">
             {info}
           </p>
           <div className="tour-footer">
@@ -24,6 +24,8 @@ const Tour = ({payload})=> {
           </div>
         </div>
       </article>
+      </div>
+
     )
 }
 

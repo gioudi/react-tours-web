@@ -4,9 +4,9 @@ import Service from './Service'
 import { services } from '../data'
 const Services = () => {
   return (
-    <section className="section services" id="services">
-     <Title title='our' subTitle='services'/>
-      <div className="section-center services-center">
+    <section className="section" id="services">
+     <Title title='Our' subTitle='services'/>
+      <div className="is-flex is-justify-content-space-between">
         {
           services.map((service)=>{
             return(

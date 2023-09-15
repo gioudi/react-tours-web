@@ -1,16 +1,16 @@
-const PageLinks = ({data, parentClass, itemClass}) => {
+const PageLinks = ({data,  itemClass}) => {
     return(
-        <ul className={parentClass}>
-        {
+       <>
+       {
          data.map((link)=> {
            return (
-             <li key={link.id}>
-               <a href={link.href} className={itemClass}>{link.text}</a>
-             </li>
+            <a   href={link.href} className={itemClass}  key={link.id}>
+            {link.text} </a>
            )
          })
-        }
-     </ul>
+        }</>
+  
+    
     )
 }
 

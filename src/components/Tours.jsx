@@ -5,17 +5,16 @@ import Tour from './Tour'
 const Tours = () => {
   return (
     <section className="section" id="tours">
-      <Title title='featured' subTitle='tours'/>
-
-    <div className="section-center featured-center">
-      {
-        tours.map((tour)=> {
-          return(
-            <Tour key={tour.id} payload={tour}/>
-          )
-        })
-      }
-    </div>
+      <Title title='Featured' subTitle='tours'/>
+      <div className="columns mt-5">
+        {
+          tours.map((tour)=> {
+            return(
+              <Tour key={tour.id} payload={tour}/>
+            )
+          })
+        }
+      </div>
   </section>
   )
 }
