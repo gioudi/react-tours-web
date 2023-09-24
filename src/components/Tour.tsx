@@ -2,10 +2,10 @@ const Tour = ({payload})=> {
     let {image,date,title,info, icon,location,duration,price} = payload;
     
     return (
-      <div class="column">
+      <div className="column">
       <article className="card">
         <div className="card-image">
-          <figure class="image is-4by3">
+          <figure className="image is-4by3">
           <img src={image} className="" alt={image} />
           </figure>
           <h6 className="subtitle is-6 px-4">{date}</h6>
