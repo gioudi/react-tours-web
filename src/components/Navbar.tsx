@@ -22,7 +22,7 @@ const Navbar = () => {
   <div id="navbarBasicExample" className="navbar-menu">
     <div className="navbar-end ">
       <PageLinks data={pageLinks} itemClass='navbar-item'/>
-      <div class="navbar-dropdown">
+      <div className="navbar-dropdown">
       <PageLinks data={pageLinks} itemClass='navbar-item'/>
       </div>
     </div>
