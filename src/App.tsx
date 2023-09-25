@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from "react";
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Hero from './components/Hero';
@@ -6,17 +6,23 @@ import About from './components/About'
 import Services from './components/Services'
 import Tours from './components/Tours'
 
-function App() {
+const App: FC = () => {
     return (
-        <>
+      <main className="root">
+      <>
         <Navbar></Navbar>
         <Hero></Hero>
-        <About></About>
-        <Services></Services>
+        <About></About> 
+        <Services></Services> 
         <Tours></Tours>
         <Footer></Footer> 
-  </>
-    )
-}
+      </>
+      </main>
+    );
+  };
 
 export default App;
+
+
+
+  
