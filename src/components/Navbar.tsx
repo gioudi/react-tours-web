@@ -26,19 +26,6 @@ const Navbar = () => {
       <PageLinks data={pageLinks} itemClass='navbar-item'/>
       </div>
     </div>
-
-    {/* <div className="navbar-end">
-      <div className="navbar-item">
-        <div className="buttons">
-          <a href={() => false}  className="button is-primary">
-            <strong>Sign up</strong>
-          </a>
-          <a href={() => false} className="button is-light">
-            Log in
-          </a>
-        </div>
-      </div>
-    </div> */}
   </div>
 </nav>
 
