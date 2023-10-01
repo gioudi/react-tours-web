@@ -149,4 +149,10 @@ export interface Tour {
     twitter_username?: null;
     paypal_email?: null;
   }
+
+export interface Page {
+  id: number,
+  href: string,
+  text: string
+}
   

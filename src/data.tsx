@@ -1,26 +1,28 @@
 
 import { faFacebook, faTwitter, faInstagram } from '@fortawesome/free-brands-svg-icons'
+import { Pages } from './types'
 
-export const pageLinks = [
+
+export const pageLinks: Pages = [
     {
         id: 1,
         href: '#home',
-        text: 'home'
+        text: 'Home'
     },
     {
         id: 2,
         href: '#about',
-        text: 'about'
+        text: 'About'
     },
     {
         id: 3,
         href: '#services',
-        text: 'services'
+        text: 'Services'
     },
     {
         id: 4,
         href: '#tours',
-        text: 'tours'
+        text: 'Tours'
     }
 ]
 export const socialLinks= [
