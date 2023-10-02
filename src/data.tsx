@@ -1,29 +1,28 @@
-import tour1 from './images/tour-1.jpeg'
-import tour2 from './images/tour-2.jpeg'
-import tour3 from './images/tour-3.jpeg'
-import tour4 from './images/tour-4.jpeg'
-import { faFacebook, faTwitter, faInstagram } from '@fortawesome/free-brands-svg-icons'
 
-export const pageLinks = [
+import { faFacebook, faTwitter, faInstagram } from '@fortawesome/free-brands-svg-icons'
+import { Pages } from './types'
+
+
+export const pageLinks: Pages = [
     {
         id: 1,
         href: '#home',
-        text: 'home'
+        text: 'Home'
     },
     {
         id: 2,
         href: '#about',
-        text: 'about'
+        text: 'About'
     },
     {
         id: 3,
         href: '#services',
-        text: 'services'
+        text: 'Services'
     },
     {
         id: 4,
         href: '#tours',
-        text: 'tours'
+        text: 'Tours'
     }
 ]
 export const socialLinks= [
@@ -73,7 +72,7 @@ export const tours = [
     {
         id: 1,
         icon: 'fas fa-map',
-        image: tour1,
+        image: '',
         date: 'august 26th, 2020',
         title: 'Lore ipsum',
         info: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque  vitae tempore voluptatum maxime reprehenderit eum quod exercitationem fugit, qui corporis.',
@@ -84,7 +83,7 @@ export const tours = [
     {
         id: 2,
         icon: 'fas fa-map',
-        image: tour2,
+        image:  '',
         date: 'october 1th, 2020',
         title: 'Lore ipsum',
         info: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque  vitae tempore voluptatum maxime reprehenderit eum quod exercitationem fugit, qui corporis.',
@@ -95,7 +94,7 @@ export const tours = [
     {
         id: 3,
         icon: 'fas fa-map',
-        image: tour3,
+        image:  '',
         date: 'september 15th, 2020',
         title: 'Lore ipsum',
         info: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque  vitae tempore voluptatum maxime reprehenderit eum quod exercitationem fugit, qui corporis.',
@@ -106,7 +105,7 @@ export const tours = [
     {
         id: 4,
         icon: 'fas fa-map',
-        image: tour4,
+        image:  '',
         date: 'december 5th, 2019',
         title: 'Lore ipsum',
         info: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque  vitae tempore voluptatum maxime reprehenderit eum quod exercitationem fugit, qui corporis.',
