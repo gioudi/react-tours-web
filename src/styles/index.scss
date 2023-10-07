@@ -1,0 +1,25 @@
+@import '../../node_modules/bulma/bulma.sass';
+
+body{
+    &#light {
+        line-spacing: 1.2em;
+        color: $black;
+        background: $white;
+        background-color: $white;
+        nav, nav * {
+            color: $black;
+            background: $white;
+            background-color: $white;
+        }
+    }
+    &#dark {
+            color: $white;
+            background: $black;
+            background-color: $black;
+       nav, nav * {
+            color: $white;
+            background: $black;
+            background-color: $black
+        }
+    }
+}

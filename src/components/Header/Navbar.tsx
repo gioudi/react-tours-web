@@ -4,6 +4,7 @@ import logo from '../../images/logo.png';
 import { pageLinks } from '../../data';
 import { Page } from '../../interfaces';
 import { Pages } from '../../types';
+import ToggleButton from '../ToggleButton';
 
 
 const Navbar = () => {
@@ -41,6 +42,13 @@ const Navbar = () => {
           {text}
         </a>)
       }) }
+    </div> 
+    <div className="navbar-end">
+    <div className="navbar-item">
+        <div>
+        <ToggleButton/>
+        </div>
+      </div> 
     </div> 
   </div>
 </nav>
