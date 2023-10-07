@@ -21,6 +21,8 @@
     "react-dom": "^18.2.0",
     "react-responsive-carousel": "^3.2.23",
     "react-scripts": "5.0.1",
+    "react-toggle-dark-mode": "^1.1.1",
+    "sass": "^1.69.0",
     "typescript": "^5.2.2",
     "unsplash-js": "^7.0.18",
     "web-vitals": "^2.1.4"

@@ -18,3 +18,7 @@ const PageLinks = ({data,  itemClass}) => {
 }
 
 export default PageLinks;
+
+
+
+
