@@ -1,8 +1,8 @@
 import React, { FC, Fragment} from 'react'
-import { Tour } from '../interfaces/index';
+import { Tour } from '../../interfaces/index';
 
 const TourCard: React.FC<{ payload: Tour }> = ({ payload }) => {
-    const { user, urls, links, alt_description, created_at } = payload;
+    const {  urls, alt_description, created_at } = payload;
   
     return (
       <Fragment>
