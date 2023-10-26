@@ -1,11 +1,33 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import { useState,  useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import logo from '../../images/logo.png';
-import { pageLinks } from '../../data';
 import { Page } from '../../interfaces';
 import { Pages } from '../../types';
 import ToggleButton from '../Commons/ToggleButton';
 
+const pageLinks: Pages = [
+  {
+      id: 1,
+      href: '/home',
+      text: 'Home'
+  },
+  {
+      id: 2,
+      href: '/about',
+      text: 'About'
+  },
+  {
+      id: 3,
+      href: '/services',
+      text: 'Services'
+  },
+  {
+      id: 4,
+      href: '/tours',
+      text: 'Tours'
+  }
+]
 
 const Navbar = () => {
     const [active,setActive] = useState(false);
@@ -38,9 +60,7 @@ const Navbar = () => {
       { pages.map((page: Page) => {
         const {id, text, href} = page;
         return( 
-        <a className="navbar-item" key={id} href={href}>
-          {text}
-        </a>)
+          <Link  className="navbar-item" to={href} key={id}>{text}</Link>)
       }) }
     </div> 
     <div className="navbar-end">
