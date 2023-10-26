@@ -1,33 +1,12 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import { useState,  useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { pageLinks } from '../../data';
 import logo from '../../images/logo.png';
 import { Page } from '../../interfaces';
 import { Pages } from '../../types';
 import ToggleButton from '../Commons/ToggleButton';
 
-const pageLinks: Pages = [
-  {
-      id: 1,
-      href: '/home',
-      text: 'Home'
-  },
-  {
-      id: 2,
-      href: '/about',
-      text: 'About'
-  },
-  {
-      id: 3,
-      href: '/services',
-      text: 'Services'
-  },
-  {
-      id: 4,
-      href: '/tours',
-      text: 'Tours'
-  }
-]
 
 const Navbar = () => {
     const [active,setActive] = useState(false);
