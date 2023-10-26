@@ -1,13 +1,11 @@
 import React, { FC, Fragment, useEffect, useState } from "react";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; 
 import { Carousel } from 'react-responsive-carousel';
-import { createApi } from "unsplash-js";
 import { Pictures } from "../types";
+import api from "../service";
 
 
-const api = createApi({
-  accessKey: `${process.env.REACT_APP_ACCESS_KEY}`
-});
+
 
 const Hero = () => {
   const [imagesSlider, setResponseImages] = useState<Pictures>([]);

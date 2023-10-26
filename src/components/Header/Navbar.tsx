@@ -4,7 +4,7 @@ import logo from '../../images/logo.png';
 import { pageLinks } from '../../data';
 import { Page } from '../../interfaces';
 import { Pages } from '../../types';
-import ToggleButton from '../ToggleButton';
+import ToggleButton from '../Commons/ToggleButton';
 
 
 const Navbar = () => {
