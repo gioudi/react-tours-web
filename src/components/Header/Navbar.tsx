@@ -1,7 +1,8 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import { useState,  useEffect } from 'react';
-import logo from '../../images/logo.png';
+import { Link } from 'react-router-dom';
 import { pageLinks } from '../../data';
+import logo from '../../images/logo.png';
 import { Page } from '../../interfaces';
 import { Pages } from '../../types';
 import ToggleButton from '../Commons/ToggleButton';
@@ -38,9 +39,7 @@ const Navbar = () => {
       { pages.map((page: Page) => {
         const {id, text, href} = page;
         return( 
-        <a className="navbar-item" key={id} href={href}>
-          {text}
-        </a>)
+          <Link  className="navbar-item" to={href} key={id}>{text}</Link>)
       }) }
     </div> 
     <div className="navbar-end">

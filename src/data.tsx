@@ -6,25 +6,26 @@ import { Pages } from './types'
 export const pageLinks: Pages = [
     {
         id: 1,
-        href: '#home',
+        href: '/',
         text: 'Home'
     },
     {
         id: 2,
-        href: '#about',
+        href: '/about',
         text: 'About'
     },
     {
         id: 3,
-        href: '#services',
+        href: '/services',
         text: 'Services'
     },
     {
         id: 4,
-        href: '#tours',
+        href: '/tours',
         text: 'Tours'
     }
-]
+  ]
+ 
 export const socialLinks= [
     {
         id: 1,
