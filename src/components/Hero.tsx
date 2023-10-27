@@ -3,6 +3,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
 import { Pictures } from "../types";
 import api from "../service";
+import Contact from "./Contact";
 
 
 
@@ -57,6 +58,7 @@ const Hero = () => {
                 }  
         </div> 
       </section>
+       <Contact/>
     </>
   )
 }

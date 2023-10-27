@@ -156,3 +156,9 @@ export interface Page {
   text: string
 }
   
+export interface MessageContact {
+  name: string,
+  email: string,
+  subject: string,
+  message: string
+}
