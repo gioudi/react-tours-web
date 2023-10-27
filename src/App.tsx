@@ -9,10 +9,12 @@ const App: FC = () => {
       <main className="root">
       <BrowserRouter>
         <Navbar/>
-         <Routes>
+        <section className="container">
+        <Routes>
           <Route path="/" element={<Hero></Hero>}></Route>
           <Route path="/tours" element={<Tours/>}></Route>
          </Routes>
+        </section>
       </BrowserRouter>
       </main>
     );
