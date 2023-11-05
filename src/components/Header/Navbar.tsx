@@ -6,7 +6,7 @@ import { type Page } from '../../interfaces';
 import { type Pages } from '../../types';
 import ToggleButton from '../Commons/ToggleButton';
 
-const Navbar = () => {
+const Navbar = (): JSX.Element => {
   const [active, setActive] = useState(false);
   const [pages, setPages] = useState<Pages>([]);
 

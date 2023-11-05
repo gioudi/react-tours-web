@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { type MessageContact } from '../interfaces';
 import Title from './Title';
 
-const Contact = () => {
+const Contact = (): JSX.Element => {
   const [formData, setFormData] = useState<MessageContact>({
     name: '',
     email: '',
@@ -10,18 +10,17 @@ const Contact = () => {
     message: '',
   });
 
-  const handleChangeInput = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChangeInput = (e: React.ChangeEvent<HTMLInputElement>): void => {
     const { name, value } = e.target;
     setFormData((prevData) => ({ ...prevData, [name]: value }));
   };
 
-  const handleChangeArea = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+  const handleChangeArea = (e: React.ChangeEvent<HTMLTextAreaElement>): void => {
     const { name, value } = e.target;
     setFormData((prevData) => ({ ...prevData, [name]: value }));
   };
 
-  const handleSubmit = (e: React.ChangeEvent<HTMLFormElement>) => {
-    console.log('entro');
+  const handleSubmit = (e: React.ChangeEvent<HTMLFormElement>): void => {
     e.preventDefault();
     try {
       console.log(formData);
