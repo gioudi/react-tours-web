@@ -1,13 +1,13 @@
 import { useState } from 'react';
 import { DarkModeSwitch } from 'react-toggle-dark-mode';
 
-const ToggleButton = () => {
+const ToggleButton = (): JSX.Element => {
   const [isDarkMode, setDarkMode] = useState<boolean>(false);
   const [darkModeState, setDarkModeState] = useState<string>('dark');
-  const addAttributeId = () => {
+  const addAttributeId = (): void => {
     document.body.id = darkModeState;
   };
-  const toggleDarkMode = (checked: boolean) => {
+  const toggleDarkMode = (checked: boolean): void => {
     setDarkMode(checked);
     setDarkModeState(checked ? 'light' : 'dark');
     addAttributeId();

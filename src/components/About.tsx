@@ -1,7 +1,6 @@
-import React from 'react';
 import about from '../images/about.jpeg';
 import Title from './Title';
-const About = () => {
+const About = (): JSX.Element => {
   return (
     <section
       className="container is-fullhd"
@@ -33,7 +32,7 @@ const About = () => {
             unde dolor?
           </p>
           <a
-            href={() => false}
+            ref={() => false}
             className="button is-info is-light"
           >
             read more

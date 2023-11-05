@@ -5,11 +5,11 @@ import { type Pictures } from '../types';
 import api from '../service';
 import Contact from './Contact';
 
-const Hero = () => {
+const Hero = ():JSX.Element => {
   const [imagesSlider, setResponseImages] = useState<Pictures>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  const handleChange = (index: number) => {
+  const handleChange = (index: number): void => {
     setCurrentIndex(index);
   };
 

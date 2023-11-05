@@ -162,3 +162,9 @@ export interface MessageContact {
   subject: string;
   message: string;
 }
+export interface TitleComponent {
+  title: string,
+  subTitle: string
+}
+
+

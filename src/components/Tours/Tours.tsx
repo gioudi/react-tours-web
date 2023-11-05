@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/strict-boolean-expressions */
 import React, { type FC, useEffect, useState } from 'react';
 import TourCard from './TourCard';
 import Title from '../Title';
