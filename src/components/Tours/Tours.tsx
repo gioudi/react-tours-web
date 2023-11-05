@@ -3,6 +3,7 @@ import React, { type FC, useEffect, useState } from 'react';
 import TourCard from './TourCard';
 import Title from '../Title';
 import api from '../../service';
+import { type Tour } from '../../interfaces';
 
 const Tours: FC = () => {
   const [data, setResponse] = useState(null);
@@ -34,7 +35,7 @@ const Tours: FC = () => {
           subTitle={'tours'}
         ></Title>
         <ul className="columnUl">
-          {data.response.results.map((photo) => (
+          {data.response.results.map((photo: Tour) => (
             <li
               key={photo.id}
               className="li"
