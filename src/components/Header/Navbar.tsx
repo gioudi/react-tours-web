@@ -1,31 +1,30 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
-import { useState,  useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import { pageLinks } from '../../data';
-import logo from '../../images/logo.png';
-import { Page } from '../../interfaces';
-import { Pages } from '../../types';
-import ToggleButton from '../Commons/ToggleButton';
 
+import { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
+import { pageLinks } from '../../data'
+import logo from '../../images/logo.png'
+import { type Page } from '../../interfaces'
+import { type Pages } from '../../types'
+import ToggleButton from '../Commons/ToggleButton'
 
 const Navbar = () => {
-    const [active,setActive] = useState(false);
-    const [pages, setPages] = useState<Pages>([]);
+  const [active, setActive] = useState(false)
+  const [pages, setPages] = useState<Pages>([])
 
-    useEffect(()=> {
-      setPages(pageLinks)
-    },[])
+  useEffect(() => {
+    setPages(pageLinks)
+  }, [])
   return (
     <nav className="navbar" role="navigation" aria-label="main navigation">
   <div className="navbar-brand">
-    <a className="navbar-item" ref={()=> {}} onClick={()=> window.location.reload()}>
-      <img src={logo}  alt={logo}/>
+    <a className="navbar-item" ref={() => {}} onClick={() => { window.location.reload() }}>
+      <img src={logo} alt={logo}/>
     </a>
 
     <a role="button"
-      onClick={()=> {
+      onClick={() => {
         setActive(!active)
-    }}
+      }}
     className={`navbar-burger burger ${active && 'is-active'}`}
      aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
       <span aria-hidden="true"></span>
@@ -37,21 +36,21 @@ const Navbar = () => {
   <div id="navbarBasicExample" className={`navbar-menu ${active && 'is-active'}`}>
     <div className="navbar-start">
       { pages.map((page: Page) => {
-        const {id, text, href} = page;
-        return( 
-          <Link  className="navbar-item" to={href} key={id}>{text}</Link>)
+        const { id, text, href } = page
+        return (
+          <Link className="navbar-item" to={href} key={id}>{text}</Link>)
       }) }
-    </div> 
+    </div>
     <div className="navbar-end">
     <div className="navbar-item">
         <div>
         <ToggleButton/>
         </div>
-      </div> 
-    </div> 
+      </div>
+    </div>
   </div>
 </nav>
   )
 }
 
-export default Navbar;
+export default Navbar
