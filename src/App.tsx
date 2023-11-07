@@ -1,4 +1,4 @@
-import React, { type FC } from 'react';
+import { type FC } from 'react';
 import Navbar from './components/Header/Navbar';
 import Hero from './components/Hero';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';

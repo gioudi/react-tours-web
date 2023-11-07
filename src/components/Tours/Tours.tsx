@@ -1,17 +1,20 @@
 /* eslint-disable @typescript-eslint/strict-boolean-expressions */
-import React, { type FC, useEffect, useState } from 'react';
+import { type FC, useEffect, useState } from 'react';
 import TourCard from './TourCard';
 import Title from '../Title';
 import api from '../../service';
 import { type Tour } from '../../interfaces';
 
 const Tours: FC = () => {
-  const [data, setResponse] = useState(null);
+  const [data, setResponse] = useState<any>(null);
   useEffect(() => {
     api.search
       .getPhotos({ query: 'trips', orientation: 'landscape' })
       .then((result) => {
-        setResponse(result);
+        if(result !== null) {
+          setResponse(result);
+        }
+        
       })
       .catch(() => {
         console.log('something went wrong!');
