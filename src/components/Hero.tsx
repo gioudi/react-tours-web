@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import  { useEffect, useState } from 'react';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import { Carousel } from 'react-responsive-carousel';
 import { type Pictures } from '../types';
@@ -17,7 +17,10 @@ const Hero = ():JSX.Element => {
     api.search
       .getPhotos({ query: 'vacations', orientation: 'landscape' })
       .then((result) => {
-        setResponseImages(result.response.results);
+        if(result.response != null) {
+          const data = result.response.results as unknown as Pictures
+          setResponseImages(data);
+        }
       })
       .catch(() => {
         console.log('something went wrong!');
@@ -49,7 +52,7 @@ const Hero = ():JSX.Element => {
             <Carousel
               showArrows={true}
               autoPlay={true}
-              selectedItem={imagesSlider[currentIndex]}
+              selectedItem={Number(imagesSlider[currentIndex])}
               onChange={handleChange}
               showThumbs={false}
             >
