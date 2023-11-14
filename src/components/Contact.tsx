@@ -2,6 +2,9 @@ import { useState } from 'react';
 import { type MessageContact } from '../interfaces';
 import Title from './Title';
 
+import '../i18n/config'
+import { useTranslation } from 'react-i18next';
+
 const Contact = (): JSX.Element => {
   const [formData, setFormData] = useState<MessageContact>({
     name: '',
@@ -9,6 +12,8 @@ const Contact = (): JSX.Element => {
     subject: '',
     message: '',
   });
+
+  const { t } = useTranslation()
 
   const handleChangeInput = (e: React.ChangeEvent<HTMLInputElement>): void => {
     const { name, value } = e.target;
@@ -33,8 +38,8 @@ const Contact = (): JSX.Element => {
     <section className="columns is-flex is-justify-content-center is-mobile">
       <article className="column  ">
         <Title
-          title="Contact"
-          subTitle="us"
+          title={t('Contact')}
+          subTitle=""
         />
         <form onSubmit={handleSubmit}>
           <div className="field">

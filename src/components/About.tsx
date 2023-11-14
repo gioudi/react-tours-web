@@ -1,3 +1,4 @@
+import { type JSX } from 'react/jsx-runtime';
 import about from '../images/about.jpeg';
 import Title from './Title';
 const About = (): JSX.Element => {

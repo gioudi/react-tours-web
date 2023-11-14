@@ -4,12 +4,18 @@ import { Carousel } from 'react-responsive-carousel';
 import { type Pictures } from '../types';
 import api from '../service';
 import Contact from './Contact';
+import { type JSX } from 'react/jsx-runtime';
+import '../i18n/config'
+import { useTranslation } from 'react-i18next';
 
-const Hero = ():JSX.Element => {
+
+const Hero = (): JSX.Element => {
+
+  const { t } = useTranslation()
   const [imagesSlider, setResponseImages] = useState<Pictures>([]);
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [currentIndex, setCurrentIndex] = useState<any>(0);
 
-  const handleChange = (index: number): void => {
+  const handleChange = (index: any): void => {
     setCurrentIndex(index);
   };
 
@@ -33,16 +39,15 @@ const Hero = ():JSX.Element => {
         id="home"
       >
         <div className="column  is-flex is-align-items-center is-align-content-center is-justify-content-center is-flex-direction-column">
-          <h1 className="title is-inline mt-2">Grupo Travel</h1>
+          <h1 className="title is-inline mt-2">{ t('Tours') }</h1>
           <p className="is-inline">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae
-            explicabo debitis est autem dicta.
+           { t('Description') }
           </p>
           <a
             href="#tours"
             className="button is-inline is-info is-light"
           >
-            explore tours
+           { t('More') }
           </a>
         </div>
         <div className="column">
@@ -52,11 +57,11 @@ const Hero = ():JSX.Element => {
             <Carousel
               showArrows={true}
               autoPlay={true}
-              selectedItem={Number(imagesSlider[currentIndex])}
+              selectedItem={imagesSlider[currentIndex]}
               onChange={handleChange}
               showThumbs={false}
             >
-              {imagesSlider.map((image) => {
+              {imagesSlider.map((image: { alt_description: any; urls: { full: any; }; }) => {
                 return (
                   <article key={image.alt_description}>
                     <img
