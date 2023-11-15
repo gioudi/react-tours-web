@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { type JSX } from 'react/jsx-runtime';
 import { pageLinks } from '../../data';
 import logo from '../../images/logo.png';
 import { type Page } from '../../interfaces';
@@ -15,7 +16,7 @@ const Navbar = (): JSX.Element => {
   }, []);
   return (
     <nav
-      className="navbar"
+      className="navbar is-fixed-top has-shadow is-light"
       role="navigation"
       aria-label="main navigation"
     >
@@ -69,9 +70,9 @@ const Navbar = (): JSX.Element => {
         </div>
         <div className="navbar-end">
           <div className="navbar-item">
-            <div>
-              <ToggleButton />
-            </div>
+             <div className='is-flex is-justify-content-center is-align-items-center'>
+             <ToggleButton />
+             </div>
           </div>
         </div>
       </div>
