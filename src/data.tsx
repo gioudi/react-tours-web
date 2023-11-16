@@ -3,30 +3,8 @@ import {
   faTwitter,
   faInstagram,
 } from '@fortawesome/free-brands-svg-icons';
-import { type Pages } from './types';
 
-export const pageLinks: Pages = [
-  {
-    id: 1,
-    href: '/',
-    text: 'Home',
-  },
-  {
-    id: 2,
-    href: '/about',
-    text: 'About',
-  },
-  {
-    id: 3,
-    href: '/services',
-    text: 'Services',
-  },
-  {
-    id: 4,
-    href: '/tours',
-    text: 'Tours',
-  },
-];
+
 
 export const socialLinks = [
   {
