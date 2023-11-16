@@ -1,3 +1,4 @@
+import { IconProp } from '@fortawesome/fontawesome-svg-core';
 export interface Tour {
   id: string;
   slug: string;
@@ -165,6 +166,12 @@ export interface MessageContact {
 export interface TitleComponent {
   title: string,
   subTitle: string
+}
+export interface CardBenefit {
+  id: number,
+  title: string,
+  icon: IconProp,
+  description: string
 }
 
 

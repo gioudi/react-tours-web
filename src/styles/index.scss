@@ -8,9 +8,11 @@ body {
     background-color: $white;
     nav,
     nav * {
+      background-color: transparent;
       color: $black;
-      background: $white;
-      background-color: $white;
+    }
+    a,p,h1,h2,h3,h4,h5,h6,small,span {
+      color: $black;
     }
   }
   &#dark {
@@ -19,8 +21,13 @@ body {
     background-color: $black;
     nav,
     nav * {
+      background-color: transparent;
       color: $white;
-      background: $black;
+    }
+    a,p,h1,h2,h3,h4,h5,h6,small,span {
+      color: $white;
+    }
+    .box {
       background-color: $black;
     }
   }

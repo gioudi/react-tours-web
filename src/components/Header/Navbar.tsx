@@ -1,22 +1,44 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { type JSX } from 'react/jsx-runtime';
-import { pageLinks } from '../../data';
 import logo from '../../images/logo.png';
 import { type Page } from '../../interfaces';
 import { type Pages } from '../../types';
 import ToggleButton from '../Commons/ToggleButton';
+import '../../i18n/config';
+import { useTranslation } from 'react-i18next';
+
+
 
 const Navbar = (): JSX.Element => {
   const [active, setActive] = useState(false);
   const [pages, setPages] = useState<Pages>([]);
+  const { t } = useTranslation();
+
+  const pageLinks: Pages = [
+    {
+      id: 1,
+      href: '/',
+      text: t('Home'),
+    },
+    {
+      id: 2,
+      href: '/about',
+      text: t('About'),
+    },
+    {
+      id: 3,
+      href: '/tours',
+      text: t('Tours'),
+    },
+  ];
 
   useEffect(() => {
     setPages(pageLinks);
   }, []);
   return (
     <nav
-      className="navbar is-fixed-top has-shadow is-light"
+      className="navbar is-fixed-top is-transparent"
       role="navigation"
       aria-label="main navigation"
     >

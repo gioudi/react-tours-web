@@ -1,15 +1,16 @@
 import { type FC } from 'react';
 import Navbar from './components/Header/Navbar';
-import Hero from './components/Hero';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Hero from './components/Hero';
 import Tours from './components/Tours/Tours';
+import Contact from './components/Contact';
 
 const App: FC = () => {
   return (
     <main className="root">
       <BrowserRouter>
         <Navbar />
-        <section className="container">
+        <section className="container has-background-light  is-fullhd">
           <Routes>
             <Route
               path="/"
@@ -18,6 +19,10 @@ const App: FC = () => {
             <Route
               path="/tours"
               element={<Tours />}
+            ></Route>
+            <Route
+              path="/contact"
+              element={<Contact />}
             ></Route>
           </Routes>
         </section>

@@ -15,7 +15,6 @@ const ToggleButton = (): JSX.Element => {
 
   return (
     <DarkModeSwitch
-      style={{ marginBottom: '2rem' }}
       checked={isDarkMode}
       onChange={toggleDarkMode}
       size={20}

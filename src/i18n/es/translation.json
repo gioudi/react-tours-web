@@ -2,9 +2,13 @@
     "About": "Nosotros",
     "Home": "Index",
     "Tours": "Paquetes",
-    "Hero": "Banner",
-    "Contact": "Contacto",
+    "Hero": "Tours en Todo el Mundo",
+    "HeroSlogan": "Tours en XXX: Viajes Ideales",
+    "HeroDescription": "Recibe ayuda de uno de nuestros Aseosores para armar un plan ideal de viaje, encuentra contenidos de calidad sobre tu próximo destino y descubre la belleza del mundo.",
+    "Contact": "Contáctenos",
     "Form": "Formulario",
     "Description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae explicabo debitis est autem dicta.",
-    "More": "Ver mas"
+    "More": "Ver mas",
+    "Inspiration": "Inspírate",
+    "InspirationDescription": "Lorem ipsum es el texto que se usa habitualmente en diseño gráfico en demostraciones de tipografías"
 }
