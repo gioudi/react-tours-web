@@ -1,7 +1,8 @@
 {
     "About": "Nosotros",
     "Home": "Index",
-    "Tours": "Paquetes",
+    "Tours": "Tours a Xxxxx",
+    "TourSlogan": "Descubre, disfruta y enamórate de un nuevo lugar",
     "Hero": "Tours en Todo el Mundo",
     "HeroSlogan": "Tours en XXX: Viajes Ideales",
     "HeroDescription": "Recibe ayuda de uno de nuestros Aseosores para armar un plan ideal de viaje, encuentra contenidos de calidad sobre tu próximo destino y descubre la belleza del mundo.",
@@ -12,3 +13,4 @@
     "Inspiration": "Inspírate",
     "InspirationDescription": "Lorem ipsum es el texto que se usa habitualmente en diseño gráfico en demostraciones de tipografías"
 }
+

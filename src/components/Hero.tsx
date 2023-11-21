@@ -61,7 +61,8 @@ const Hero = (): JSX.Element => {
   }, []);
   return (
     <>
-      <section id="home">
+      <section className="is-relative " 
+      style={{marginBottom: '250px'}}>
         <div>
           {imagesSlider === null ? (
             <div>Loading...</div>
