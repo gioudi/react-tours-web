@@ -2,18 +2,18 @@
 import { useEffect, useState } from 'react';
 import TourCard from './TourCard';
 import api from '../../service';
-import { Carousel } from 'react-responsive-carousel';
+import {Swiper, SwiperSlide} from 'swiper/react'
 import { type Pictures } from '../../types';
 import { useTranslation } from 'react-i18next';
+
+
+import 'swiper/css/effect-coverflow';
+
+import { EffectCoverflow } from 'swiper/modules'
 
 const Tours = (): JSX.Element => {
   const { t } = useTranslation();
   const [data, setResponse] = useState<Pictures>([]);
-  const [currentIndex, setCurrentIndex] = useState<any>(0);
-
-  const handleChange = (index: any): void => {
-    setCurrentIndex(index);
-  };
   useEffect(() => {
     api.search
       .getPhotos({ query: 'trips', orientation: 'landscape' })
@@ -43,26 +43,47 @@ const Tours = (): JSX.Element => {
           {data === null ? (
             <div>Loading...</div>
           ) : (
-            <Carousel
-              showArrows={true}
-              autoPlay={true}
-              selectedItem={data[currentIndex]}
-              onChange={handleChange}
-              showThumbs={false}
-              showStatus={false}
-              showIndicators={false}
-              infiniteLoop={true}
+            <Swiper
+              spaceBetween={25}
+              
+              breakpoints={{
+                320: {
+                  width: 320,
+                  slidesPerView: 1
+                },
+                768:{
+                  width: 768,
+                  slidesPerView: 2
+                },
+                994:{
+                  slidesPerView: 3
+                }
+
+              }}
+              effect={'coverflow'}
+              coverflowEffect={
+                {
+                  rotate:50,
+                  stretch:0,
+                  depth: 100,
+                  modifier: 1,
+                  slideShadows: true
+                }
+              }
+              modules={[EffectCoverflow]}
+              centeredSlides={true}
+              grabCursor={true}
+              
             >
               {data.map((photo: any) => (
-                <div key={photo.id}>
+                <SwiperSlide key={photo.id}>
                 <TourCard
                  style={{width: '25%'}}
                   payload={photo}
                 />
-                </div>
-                
+                </SwiperSlide>
               ))}
-            </Carousel>
+            </Swiper>
           )}
         </div>
       </div>
