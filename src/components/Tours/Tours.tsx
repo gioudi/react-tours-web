@@ -1,55 +1,93 @@
 /* eslint-disable @typescript-eslint/strict-boolean-expressions */
-import { type FC, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import TourCard from './TourCard';
-import Title from '../Title';
 import api from '../../service';
-import { type Tour } from '../../interfaces';
+import {Swiper, SwiperSlide} from 'swiper/react'
+import { type Pictures } from '../../types';
+import { useTranslation } from 'react-i18next';
 
-const Tours: FC = () => {
-  const [data, setResponse] = useState<any>(null);
+
+import 'swiper/css/effect-coverflow';
+
+import { EffectCoverflow } from 'swiper/modules'
+
+const Tours = (): JSX.Element => {
+  const { t } = useTranslation();
+  const [data, setResponse] = useState<Pictures>([]);
   useEffect(() => {
     api.search
       .getPhotos({ query: 'trips', orientation: 'landscape' })
       .then((result) => {
-        if(result !== null) {
-          setResponse(result);
+        if (result.response != null) {
+          const data = result.response.results as unknown as Pictures;
+          setResponse(data);
         }
-        
       })
       .catch(() => {
         console.log('something went wrong!');
       });
   }, []);
 
-  if (data === null) {
-    return <div>Loading...</div>;
-  } else if (data.errors) {
-    return (
-      <div>
-        <div>{data.errors[0]}</div>
-        <div>Try again later!</div>
-      </div>
-    );
-  } else {
     return (
       <div className="section">
-        <Title
-          title={'Featured'}
-          subTitle={'tours'}
-        ></Title>
-        <ul className="columnUl">
-          {data.response.results.map((photo: Tour) => (
-            <li
-              key={photo.id}
-              className="li"
+         <div className="has-text-centered mb-4">
+         <p className="title-2 has-text-weight-bold  ">
+            {t('HeroSlogan')}
+          </p>
+          <h1 className="title is-size-1 has-text-weight-bold  ">
+            {t('Hero')}
+          </h1>
+          <small className=" mb-3">{t('HeroDescription')}</small>
+         </div>
+        <div>
+          {data === null ? (
+            <div>Loading...</div>
+          ) : (
+            <Swiper
+              spaceBetween={25}
+              
+              breakpoints={{
+                320: {
+                  width: 320,
+                  slidesPerView: 1
+                },
+                768:{
+                  width: 768,
+                  slidesPerView: 2
+                },
+                994:{
+                  slidesPerView: 3
+                }
+
+              }}
+              effect={'coverflow'}
+              coverflowEffect={
+                {
+                  rotate:50,
+                  stretch:0,
+                  depth: 100,
+                  modifier: 1,
+                  slideShadows: true
+                }
+              }
+              modules={[EffectCoverflow]}
+              centeredSlides={true}
+              grabCursor={true}
+              
             >
-              <TourCard payload={photo} />
-            </li>
-          ))}
-        </ul>
+              {data.map((photo: any) => (
+                <SwiperSlide key={photo.id}>
+                <TourCard
+                 style={{width: '25%'}}
+                  payload={photo}
+                />
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          )}
+        </div>
       </div>
     );
-  }
-};
+}
 
 export default Tours;

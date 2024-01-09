@@ -5,6 +5,7 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import { fas } from '@fortawesome/free-solid-svg-icons';
 
 import './styles/index.scss';
+import 'swiper/css'
 
 library.add(fas);
 // eslint-disable-next-line @typescript-eslint/no-non-null-assertion

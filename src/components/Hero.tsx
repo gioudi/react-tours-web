@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
-import { Carousel } from 'react-responsive-carousel';
+import {Swiper, SwiperSlide} from 'swiper/react'
 import { type Pictures } from '../types';
 import api from '../service';
 import { type JSX } from 'react/jsx-runtime';
@@ -13,7 +13,6 @@ import { faLightbulb } from '@fortawesome/free-regular-svg-icons';
 const Hero = (): JSX.Element => {
   const { t } = useTranslation();
   const [imagesSlider, setResponseImages] = useState<Pictures>([]);
-  const [currentIndex, setCurrentIndex] = useState<any>(0);
 
   const listBenefits = [
     {
@@ -42,9 +41,6 @@ const Hero = (): JSX.Element => {
     },
   ];
 
-  const handleChange = (index: any): void => {
-    setCurrentIndex(index);
-  };
 
   useEffect(() => {
     api.search
@@ -61,27 +57,21 @@ const Hero = (): JSX.Element => {
   }, []);
   return (
     <>
-      <section id="home">
+      <section className="is-relative margin-bottom-200" 
+      >
         <div>
           {imagesSlider === null ? (
             <div>Loading...</div>
           ) : (
-            <Carousel
-              showArrows={true}
-              autoPlay={true}
-              selectedItem={imagesSlider[currentIndex]}
-              onChange={handleChange}
-              showThumbs={false}
-              showStatus={false}
-              showIndicators={false}
-              infiniteLoop={true}
+            <Swiper
+              slidesPerView={1}
             >
               {imagesSlider.map(
                 (image: { alt_description: any; urls: { full: any } }) => {
                   return (
-                    <article
+                    <SwiperSlide
                       className="is-relative"
-                      style={{ height: '85vh', width: '100vw' }}
+                      style={{ height: '85vh' }}
                       key={image.alt_description}
                     >
                       <img
@@ -112,16 +102,15 @@ const Hero = (): JSX.Element => {
                           {t('More')}
                         </a>
                       </div>
-                    </article>
+                    </SwiperSlide>
                   );
                 },
               )}
-            </Carousel>
+            </Swiper>
           )}
         </div>
         <div
-          className="columns is-1-mobile  is-8-desktop is-8-widescreen is-multiline is-mobile"
-          style={{ position: 'absolute', top: '90%', left: '10%', width: '80%' }}
+          className="hero-container-benefits columns is-1-mobile  is-8-desktop is-8-widescreen is-multiline is-mobile"
         >
           {listBenefits.map((item: any) => {
             const { id, title, description, icon } = item;
@@ -144,5 +133,4 @@ const Hero = (): JSX.Element => {
     </>
   );
 };
-
 export default Hero;

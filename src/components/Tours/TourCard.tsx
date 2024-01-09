@@ -1,13 +1,11 @@
-import React, { Fragment } from 'react';
-import { type Tour } from '../../interfaces/index';
+import React from 'react';
 
-const TourCard: React.FC<{ payload: Tour }> = ({ payload }) => {
+const TourCard = ({payload}: any): JSX.Element => {
   // eslint-disable-next-line @typescript-eslint/naming-convention
   const { urls, alt_description, created_at } = payload;
-
+  console.log(payload)
   return (
-    <Fragment>
-      <div className="column">
+    <>
         <article className="card">
           <div className="card-image">
             <figure className="image is-4by3">
@@ -20,8 +18,7 @@ const TourCard: React.FC<{ payload: Tour }> = ({ payload }) => {
             <h6 className="subtitle is-6 px-4">{created_at}</h6>
           </div>
         </article>
-      </div>
-    </Fragment>
+    </>
   );
 };
 

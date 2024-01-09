@@ -1,9 +1,9 @@
 import { type FC } from 'react';
 import Navbar from './components/Header/Navbar';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Hero from './components/Hero';
 import Tours from './components/Tours/Tours';
 import Contact from './components/Contact';
+import Layout from './components/Layout';
 
 const App: FC = () => {
   return (
@@ -14,7 +14,7 @@ const App: FC = () => {
           <Routes>
             <Route
               path="/"
-              element={<Hero></Hero>}
+              element={<Layout></Layout>}
             ></Route>
             <Route
               path="/tours"
