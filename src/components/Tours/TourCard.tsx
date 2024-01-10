@@ -2,7 +2,7 @@ import React from 'react';
 
 const TourCard = ({payload}: any): JSX.Element => {
   // eslint-disable-next-line @typescript-eslint/naming-convention
-  const { urls, alt_description, created_at } = payload;
+  const { urls, alt_description  } = payload;
   console.log(payload)
   return (
     <>
@@ -15,7 +15,16 @@ const TourCard = ({payload}: any): JSX.Element => {
                 alt={alt_description}
               />
             </figure>
-            <h6 className="subtitle is-6 px-4">{created_at}</h6>
+          </div>
+          <div className="card-content">
+          <h6 className="subtitle is-6 mb-1">Caribe colombiano, Cartagena</h6>
+            <p className="mb-1">Descubre Cartagena, paquete 3 dias 2 noches</p>
+            <a
+              href="#"
+              className="button is-clickable is-small is-success"
+            >
+              Ver mas
+            </a>
           </div>
         </article>
     </>

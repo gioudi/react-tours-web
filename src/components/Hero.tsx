@@ -97,7 +97,7 @@ const Hero = (): JSX.Element => {
                         <small className=" mb-3">{t('HeroDescription')}</small>
                         <a
                           href="#tours"
-                          className="button is-clickable is-inline is-success is-outlined"
+                          className="button is-clickable is-small is-inline is-success "
                         >
                           {t('More')}
                         </a>

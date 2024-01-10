@@ -35,8 +35,9 @@ const Contact = (): JSX.Element => {
   };
 
   return (
-    <section className="columns is-flex is-justify-content-center is-mobile">
-      <article className="column  ">
+    <section className="container">
+         <section className="columns is-flex is-justify-content-left is-mobile">
+      <article className="column is-6  ">
         <Title
           title={t('Contact')}
           subTitle=""
@@ -47,7 +48,7 @@ const Contact = (): JSX.Element => {
               className="label"
               htmlFor="name"
             >
-              Name
+              Nombre
             </label>
             <div className="control">
               <input
@@ -67,7 +68,7 @@ const Contact = (): JSX.Element => {
               className="label"
               htmlFor="email"
             >
-              Email
+              Correo
             </label>
             <div className="control">
               <input
@@ -87,7 +88,7 @@ const Contact = (): JSX.Element => {
               className="label"
               htmlFor="subject"
             >
-              Subject
+              Asunto
             </label>
             <div className="control">
               <input
@@ -107,7 +108,7 @@ const Contact = (): JSX.Element => {
               className="label"
               htmlFor="message"
             >
-              Message
+              Descipción
             </label>
             <div className="control">
               <textarea
@@ -129,6 +130,7 @@ const Contact = (): JSX.Element => {
           </div>
         </form>
       </article>
+    </section>
     </section>
   );
 };

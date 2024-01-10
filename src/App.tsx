@@ -2,7 +2,6 @@ import { type FC } from 'react';
 import Navbar from './components/Header/Navbar';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Tours from './components/Tours/Tours';
-import Contact from './components/Contact';
 import Layout from './components/Layout';
 
 const App: FC = () => {
@@ -10,7 +9,7 @@ const App: FC = () => {
     <main className="root">
       <BrowserRouter>
         <Navbar />
-        <section className="container has-background-light  is-fullhd">
+        <section className="container container-views  is-fullhd">
           <Routes>
             <Route
               path="/"
@@ -19,10 +18,6 @@ const App: FC = () => {
             <Route
               path="/tours"
               element={<Tours />}
-            ></Route>
-            <Route
-              path="/contact"
-              element={<Contact />}
             ></Route>
           </Routes>
         </section>

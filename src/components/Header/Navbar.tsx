@@ -26,11 +26,6 @@ const Navbar = (): JSX.Element => {
       href: '/about',
       text: t('About'),
     },
-    {
-      id: 3,
-      href: '/tours',
-      text: t('Tours'),
-    },
   ];
 
   useEffect(() => {
