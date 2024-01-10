@@ -23,6 +23,16 @@ body {
     span {
       color: $black;
     }
+    .container-views {
+      background-color: #f2f2f2;
+    }
+
+    .card{
+      background-color: $white;
+    } 
+    .card *{
+      color: $black;
+    }
   }
   &#dark {
     color: $white;
@@ -45,8 +55,11 @@ body {
     span {
       color: $white;
     }
-    .box {
+    .box,.container-views,.card  {
       background-color: $black;
+    }
+    .card *{
+      color: $white;
     }
   }
   @media only screen and (min-width: 1024px) {
